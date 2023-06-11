@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cache_test_client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksQ-V9-3RX">
+                                <rect key="frame" x="0.0" y="12.666666666666686" width="393" height="852"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOv-rK-u7M">
+                                <rect key="frame" x="20" y="706" width="131" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send Request"/>
+                                <connections>
+                                    <action selector="sendRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DWz-Cn-1Ok"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOy-n6-NVt">
+                                <rect key="frame" x="164.66666666666666" y="749" width="64" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                <connections>
+                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bvf-mD-cG0"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="asdasd" on="YES" title="Allow Client Side Caching" translatesAutoresizingMaskIntoConstraints="NO" id="Xga-zb-cck">
+                                <rect key="frame" x="69" y="632" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchCaching:" destination="BYZ-38-t0r" eventType="valueChanged" id="NYU-Rv-gaN"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow Client Side Caching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIQ-7x-m2d">
+                                <rect key="frame" x="131" y="637" width="194" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wv6-0I-PJT">
+                                <rect key="frame" x="159" y="706" width="219" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send Request (No cache)"/>
+                                <connections>
+                                    <action selector="sendRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EeV-8q-2HP"/>
+                                    <action selector="sendRequestNoCache:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QbE-Ng-HU8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ksQ-V9-3RX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="5Zt-Qd-z1w"/>
+                            <constraint firstItem="ksQ-V9-3RX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="KTy-xj-HJm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nOv-rK-u7M" secondAttribute="bottom" constant="77" id="SJn-lx-OqF"/>
+                            <constraint firstItem="VOy-n6-NVt" firstAttribute="top" secondItem="nOv-rK-u7M" secondAttribute="bottom" constant="8" symbolic="YES" id="Vvq-8K-8P6"/>
+                            <constraint firstItem="Wv6-0I-PJT" firstAttribute="centerY" secondItem="nOv-rK-u7M" secondAttribute="centerY" id="cWp-d1-yLg"/>
+                            <constraint firstItem="ksQ-V9-3RX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dQK-Eo-ZJP"/>
+                            <constraint firstItem="Wv6-0I-PJT" firstAttribute="leading" secondItem="nOv-rK-u7M" secondAttribute="trailing" constant="8" symbolic="YES" id="g7R-G4-MIg"/>
+                            <constraint firstItem="VOy-n6-NVt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="i4X-XD-7Gu"/>
+                            <constraint firstItem="nOv-rK-u7M" firstAttribute="leading" secondItem="ksQ-V9-3RX" secondAttribute="leading" constant="20" id="kEE-es-tHe"/>
+                            <constraint firstItem="ksQ-V9-3RX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="v1o-Be-NR6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="ksQ-V9-3RX" id="Eyc-vK-O1v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
